@@ -53,93 +53,6 @@
       
       <!-- NAVBAR -->
       <!-- NAVBAR -->
-<<<<<<< HEAD
-      <nav class="navbar navbar-default no-margin navbar-fixed-top" id="mv-navbar">
-        <div class="navbar-header fixed-brand">
-          <a
-            type="button"
-            class="navbar-brand menu-toggle"
-            href="#"
-            title="Afficher/masquer les thématiques"
-            i18n="navbar.toggle">
-            <i class="ri-menu-line"></i>
-          </a>
-          <a class="navbar-brand" href="#">
-            <img alt="Logo" src="img/logo/earth-globe.svg" class="mv-logo" />
-          </a>
-          <a class="navbar-brand mv-title" href="#" i18n="map_title">mViewer</a>
-          <a
-            type="button"
-            class="navbar-toggle"
-            data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
-            href="#">
-            <span class="glyphicon glyphicon-menu-hamburger"></span>
-          </a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav mv-nav">
-            <li class="hidden-lg hidden-md">
-              <a
-                href="#"
-                data-toggle="modal"
-                data-target="#thematic-modal"
-                i18n="nav.responsive.topics">
-                Thématiques
-              </a>
-            </li>
-            <li class="hidden-lg hidden-md">
-              <a
-                href="#"
-                data-toggle="modal"
-                data-target="#legend-modal"
-                i18n="nav.responsive.legend">
-                Légende
-              </a>
-            </li>
-            <li class="hidden-lg hidden-md">
-              <a
-                href="#"
-                data-toggle="modal"
-                data-target="#help"
-                i18n="nav.responsive.about">
-                A propos
-              </a>
-            </li>
-            <li class="hidden-xs hidden-sm hidden-md">
-              <div class="navbar-form navbar-left" id="coordinates">
-                <span class=""></span>
-              </div>
-            </li>
-            <!--LANG SELECTOR-->
-            <li id="lang-button" class="hidden-lg hidden-md">
-              <a
-                href="#"
-                data-toggle="modal"
-                data-target="#lang-popup"
-                i18n="nav.down.lang">
-                Langues
-              </a>
-            </li>
-            <li id="lang-selector" class="dropdown hidden-xs hidden-sm">
-              <a
-                href="#"
-                class="dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-                aria-expanded="true">
-                <span aria-setsize="20px" class="fa fa-globe fa-lg"></span>
-                <span i18n="nav.down.lang">Langue</span>
-                <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu mv-translate">
-                <!--insert languages-->
-              </ul>
-            </li>
-            <!--//LANG SELECTOR-->
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-=======
       <nav class="navbar" id="mv-navbar">
         <div class="container-fluid p-0">
           <div class="navbar-header fixed-brand">
@@ -157,7 +70,6 @@
             <a class="navbar-brand mv-title" href="#" i18n="map_title">mViewer</a>
           </div>
           <div class="nav navbar-nav navbar-right">
->>>>>>> 5d418f70 (Update html, js and css with bootstrap5)
             <li>
               <div id="login-box" class="navbar-form" style="display: none">
                 <span></span>
@@ -880,7 +792,7 @@
       </div>
       <!-- IMAGE POPUP -->
       <div id="imagepopup" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title"></h5>
@@ -894,9 +806,9 @@
               <div class="row">
                 <div class="col-md-12">
                   <img
-                    class="popphoto center-block"
+                    class="center-block"
                     src="img/blank.gif"
-                    style="max-height: 512px"
+                    style="max-width: 100%;"
                     alt="image" />
                 </div>
               </div>
@@ -951,7 +863,7 @@
       </div>
       <!-- THEMATIC POPUP -->
       <div id="thematic-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
+        <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content" role="document">
             <div class="modal-header">
               <h5 class="modal-title" i18n="thematic.modal.title">Thématiques</h5>
@@ -967,7 +879,7 @@
       </div>
       <!-- LEGEND POPUP -->
       <div id="legend-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm">
+        <div class="modal-dialog modal-dialog-scrollable">
           <div class="modal-content" role="document">
             <div class="modal-header">
               <h5 class="modal-title" i18n="legend.modal.title">Options d'affichage</h5>
@@ -983,7 +895,7 @@
       </div>
       <!-- FEATUREINFO POPUP -->
       <div id="modal-panel" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-md">
+        <div class="modal-dialog modal-md modal-dialog-scrollable">
           <div class="modal-content" role="document">
             <div class="modal-header">
               <h5 class="modal-title" i18n="featureinfo.modal.title">Informations</h5>
@@ -1232,7 +1144,7 @@
             mviewer.orderLayer(actionMove);
           },
         });
-        $("#right-panel .close,#bottom-panel .mv-close").click(function () {
+        $("#right-panel .btn-close,#bottom-panel .btn-close").click(function () {
           mviewer.hideLocation();
         });
       });
