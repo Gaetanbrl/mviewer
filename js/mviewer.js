@@ -2221,7 +2221,7 @@ mviewer = (function () {
         $("#backgroundlayersbtn").css("background-image", 'url("' + thumb + '")');
         if (!configuration.getConfiguration().mobile) {
           $("#backgroundlayersbtn").attr("title", title);
-          $("#backgroundlayersbtn").tooltip("destroy").tooltip({
+          $("#backgroundlayersbtn").tooltip("dispose").tooltip({
             placement: "left",
             trigger: "hover",
             html: true,
