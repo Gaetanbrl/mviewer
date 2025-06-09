@@ -3441,7 +3441,7 @@ mviewer = (function () {
     },
 
     setInfoPanelTitle: function (el, panel) {
-      var title = $(el).attr("data-title");
+      var title = $(el).attr("data-bs-original-title");
       $("#" + panel + " .mv-header h6").text(title);
     },
 
