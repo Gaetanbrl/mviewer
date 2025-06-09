@@ -3542,7 +3542,7 @@ mviewer = (function () {
     },
 
     legendSize: function (img) {
-      if (img.width > 250) {
+      if (img.width > 220) {
         //$(img).addClass("big-legend");
         $(img).closest("div").addClass("big-legend");
         $(img)
