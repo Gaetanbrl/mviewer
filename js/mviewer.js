@@ -1943,7 +1943,7 @@ mviewer = (function () {
       "accesskey",
       "alt",
       "value",
-      "data-original-title",
+      "data-bs-original-title",
     ];
     var _element = $(element);
     _element.find("[i18n]").each((i, el) => {
