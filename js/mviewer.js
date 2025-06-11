@@ -1871,19 +1871,11 @@ mviewer = (function () {
       languages.forEach(function (language) {
         var langStr = "";
         var icon = language;
-        var p;
         if (language === "en") {
           icon = "gb";
         }
-        if (langitems.length === 0 && showHelp) {
-          // set no padding for the first item element
-          // help popup only
-          p = 0;
-        }
         langitems.push(
-          '<li style="padding-left:' +
-            p +
-            '" type="button" class="mv-translate""><a class="dropdown-item" href="#" idlang="' +
+          '<li type="button" class="mv-translate""><a class="dropdown-item" href="#" idlang="' +
             language +
             '"><span style="margin-right: 5px;" class="flag-icon flag-icon-squared flag-icon-' +
             icon +
@@ -1896,7 +1888,7 @@ mviewer = (function () {
       // if help popup only
       if (showHelp) {
         $("#help .modal-body").append(
-          '<ul style="padding-left:0">' + langitems.join("") + "</ul>"
+          '<ul class="langList">' + langitems.join("") + "</ul>"
         );
       } else {
         // display selector or modal according to device
@@ -1905,6 +1897,14 @@ mviewer = (function () {
         $("#lang-selector>ul").append(langitems.join(""));
       }
       $(".mv-translate a").click(function () {
+        let activeLangItemsOld = document.querySelectorAll('.mv-translate a.activeLang');
+        activeLangItemsOld.forEach(i => {
+          i.classList.remove("activeLang");
+        });
+        let langElementItems = document.querySelectorAll('[idlang="'+ $(this).attr("idlang") + '"]');
+        langElementItems.forEach(i => {
+          i.classList.add("activeLang");
+        });
         _changeLanguage($(this).attr("idlang"));
       });
     }
@@ -1918,6 +1918,10 @@ mviewer = (function () {
       mviewer.tr = mviewer.lang[lang];
       _elementTranslate("body");
       mviewer.lang.lang = lang;
+      let langElementItems = document.querySelectorAll('[idlang="'+ lang + '"]');
+      langElementItems.forEach(i => {
+        i.classList.add("activeLang");
+      });
     } else {
       console.log("langue non disponible " + lang);
     }
