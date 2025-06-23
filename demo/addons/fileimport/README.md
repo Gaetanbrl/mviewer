@@ -1,6 +1,6 @@
 ## Import de fichier
 
-Cette extension permet d'importer des fichiers de façon temporaire (en local) des fichiers au format `csv` ou `shp` ou `GeoJSON`. 
+Cette extension permet d'importer des fichiers de façon temporaire (en local) des fichiers au format `csv`, `shp`, `GeoJSON` ou `JSON`. 
 
 Les données importées ne sont pas sauvegardées et seront perdues à la fermeture du navigateur.
 
