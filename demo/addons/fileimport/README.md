@@ -10,11 +10,14 @@ Dans le cas du Shapefile, le fichier `.shp` doit se trouver compressé dans un f
 
 En cas d'absence du fichier `.prj` l'utilisateur est sollicité d'indiquer le SRS.
 
-### GeoJSON
+### GeoJSON et JSON
 
-Correspond au format `.geojson` (type `application/geo+json`).
+Correspond aux formats `.geojson` ou `.json` (MIME types `application/geo+json` ou `application/json`).
 
-La projection devra être en `EPSG:4326`. Les fichier JSON (`application/json`) ne sont actuellement pas encore compatible.
+En accord avec le standard GeoJSON, le fichier doit contenir des géométries avec le système de référence  WGS84 (EPSG:4326).
+
+> Specifications du standard  RFC7946 :
+> https://datatracker.ietf.org/doc/html/rfc7946#section-4
 
 #### 4 ressources dans cette extension
 
