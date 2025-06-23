@@ -209,7 +209,7 @@ const fileimport = (function () {
       ];
       if (zipMimeTypes.includes(file.type)) {
         _unzip(file, oLayer);
-      } else if (["application/geo+json"].includes(file.type)) {
+      } else if (["application/geo+json", "application/json"].includes(file.type)) {
         // Load GeoJSON directly
         var reader = new FileReader();
         reader.onload = function (evt) {
