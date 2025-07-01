@@ -196,7 +196,7 @@ const fileimport = (function () {
     }
     if (file) {
       // fix windows OS empty type with .geojson format
-      if (/\.geojson$/i.test(file)) {
+      if (/\.geojson$/i.test(file.name)) {
         file.type = "application/geo+json";
       }
       //remove existing features
