@@ -195,6 +195,10 @@ const fileimport = (function () {
       file = document.getElementById("loadcsv-" + idlayer).files[0];
     }
     if (file) {
+      // fix windows OS empty type with .geojson format
+      if (/\.geojson$/i.test(file)) {
+        file.type = "application/geo+json";
+      }
       //remove existing features
       mviewer.getLayers()[idlayer].layer.getSource().clear();
       var oLayer = mviewer.getLayers()[idlayer];
