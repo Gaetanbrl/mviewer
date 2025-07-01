@@ -195,10 +195,6 @@ const fileimport = (function () {
       file = document.getElementById("loadcsv-" + idlayer).files[0];
     }
     if (file) {
-      // fix windows OS empty type with .geojson format
-      if (/\.geojson$/i.test(file.name)) {
-        file.type = "application/geo+json";
-      }
       //remove existing features
       mviewer.getLayers()[idlayer].layer.getSource().clear();
       var oLayer = mviewer.getLayers()[idlayer];
@@ -213,7 +209,12 @@ const fileimport = (function () {
       ];
       if (zipMimeTypes.includes(file.type)) {
         _unzip(file, oLayer);
-      } else if (["application/geo+json", "application/json"].includes(file.type)) {
+
+        // regex fix windows OS empty type with .geojson format
+      } else if (
+        /\.geojson$/i.test(file.name) ||
+        ["application/geo+json", "application/json"].includes(file.type)
+      ) {
         // Load GeoJSON directly
         var reader = new FileReader();
         reader.onload = function (evt) {
