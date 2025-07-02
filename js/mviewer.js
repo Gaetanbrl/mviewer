@@ -403,6 +403,34 @@ mviewer = (function () {
     $("#alerts-zone").append(item);
   };
 
+  /**
+   * _messageToast Show toast method.
+   * @param {String} title
+   * @param {String} msg
+   */
+
+  var _messageToast = function (title,msg,delay) {
+    const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.setAttribute('role', 'alert');
+      toast.setAttribute('aria-live', 'assertive');
+      toast.setAttribute('aria-atomic', 'true');
+      toast.setAttribute('data-bs-delay', delay ?? 5000);
+      toast.innerHTML = `
+        <div class="toast-header">
+          <strong class="me-auto">${title}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Fermer"></button>
+        </div>
+        <div class="toast-body">
+          ${msg}
+        </div>
+      `;
+      document.getElementById('toasts-zone').appendChild(toast);
+      const bsToast = new bootstrap.Toast(toast);
+      bsToast.show();
+      toast.addEventListener('hidden.bs.toast', () => toast.remove());
+  };
+
   var _deleteLayer = function (layername) {
     $("[data-layerid='" + layername + "']").remove();
     _map.removeLayer(_overLayers[layername].layer);
@@ -3731,6 +3759,10 @@ mviewer = (function () {
 
     alert: function (msg, cls) {
       _message(msg, cls);
+    },
+
+    toast: function (title, msg) {
+      _messageToast(title, msg);
     },
 
     legendSize: function (img) {
