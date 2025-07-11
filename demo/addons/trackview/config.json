@@ -1,13 +1,13 @@
 {
   "type": "module",
   "js": [
-    "../../../lib/chartjs-3.7.1/Chart.min.js",
+    "lib/Chart.min.js",
     "lib/turf.min.js",
     "js/custom-dropdown.js",
     "js/trackview.js"
   ],
-  "css": "/css/style.css",
-  "html": "./trackview.html",
+  "css": "css/style.css",
+  "html": "trackview.html",
   "target": "page-content-wrapper",
   "options": {
     "mviewer": {

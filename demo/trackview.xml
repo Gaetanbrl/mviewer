@@ -2,7 +2,7 @@
     <application id="parcours" 
         title="TatiHougue"
         style="css/themes/blue.css" 
-        logo="img/logo/tatihouguev2.png"
+        logo=""
         exportpng="false" 
         measuretools="false" 
         mapprint="false"
