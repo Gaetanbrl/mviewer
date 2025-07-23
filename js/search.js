@@ -244,6 +244,7 @@ var search = (function () {
       // TIMEOUT will avoid one request by keyup
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
+        _clearSearchResults();
         // Avoid double trigger
         if (isPasting && e.key.toLowerCase() === "v") {
           isPasting = false;
