@@ -388,10 +388,12 @@ mviewer = (function () {
 
   /**
    * _message Show message method.
-   * @param {String} msg
+   * @param {String} msg message to show
+   * @param {String} cls class of the message
+   * @param {Number} duration duration of the message in ms
    */
 
-  var _message = function (msg, cls) {
+  var _message = function (msg, cls, duration = 5000) {
     var item = $(
       [
         '<div class="alert ' + cls + ' alert-dismissible" role="alert">',
@@ -402,6 +404,10 @@ mviewer = (function () {
       ].join("")
     );
     $("#alerts-zone").append(item);
+
+    setTimeout(function () {
+      item.alert("close");
+    }, duration);
   };
 
   var _deleteLayer = function (layername) {
@@ -3674,8 +3680,8 @@ mviewer = (function () {
       }
     },
 
-    alert: function (msg, cls) {
-      _message(msg, cls);
+    alert: function (msg, cls, ms) {
+      _message(msg, cls), ms;
     },
 
     legendSize: function (img) {
