@@ -16,7 +16,9 @@
     <olscompletion url="https://data.geopf.fr/geocodage/completion" type="completion" attribution="Service d'autocomplétion de l'IGN"/>
 
     <searchparameters bbox="false" localities="true" features="false" />   
-
+<extensions>
+    <extension type="component" id="panoramax" path="demo/addons"/>
+</extensions>
     <themes> 
         <theme name="Population"  collapsed="false" id="habitant" icon="fas fa-users">
 			<layer id="rp_struct_pop_geom" name="Densité de population (hab/km²)"  visible="false" tiled="false"

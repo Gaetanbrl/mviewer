@@ -1,0 +1,12 @@
+:root{--mv-edge-bg:#131a22;--mv-edge-ink:#e6eef7;--mv-edge-muted:#97a6b6;--mv-edge-accent:#4ea1ff}
+.mv-edge-markers{position:absolute;inset:0;pointer-events:none;z-index:30;display:none}
+.mv-edge{
+  position:absolute;transform:translate(-50%,-50%);
+  background:var(--mv-edge-bg);border:1px solid var(--mv-edge-accent);color:var(--mv-edge-ink);
+  border-radius:999px;padding:6px 10px;display:inline-flex;align-items:center;gap:6px;
+  box-shadow:0 2px 10px rgba(0,0,0,.35);white-space:nowrap;font-size:13px
+}
+.mv-edge .mv-chevron{width:10px;height:10px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg)}
+.mv-edge .mv-badge{font-variant-numeric:tabular-nums;font-size:12px;color:var(--mv-edge-muted)}
+.mv-edge[data-side=top]{translate:0 6px}.mv-edge[data-side=bottom]{translate:0 -6px}
+.mv-edge[data-side=left]{translate:6px 0}.mv-edge[data-side=right]{translate:-6px 0}

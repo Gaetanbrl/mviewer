@@ -1,0 +1,21 @@
+{
+  "js": ["js/edgeindicators.main.js"],
+  "css": "edgeindicator.style.css",
+  "html": "component.html",
+  "type": "module",
+  "target": "map",
+  "options": {
+    "offre_soins": {
+      "layerId": "cluster",
+      "labelAttr": "idror",
+      "keyAttr": "color",
+      "maxMarkers": 12,
+      "margin": 8,
+      "distanceUnit": "km",
+      "minZoom": 15,
+      "distanceMode": "within",
+      "distanceThresholdMeters": 100000,
+      "defaultColors": { "bg": "#131a22", "text": "#e6eef7", "border": "#4ea1ff" }
+    }
+  }
+}
