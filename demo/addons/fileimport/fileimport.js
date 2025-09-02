@@ -320,7 +320,7 @@ const fileimport = (function () {
             title
           );
 
-          if ($("#collapseZero").hasClass("in") !== false) {
+          if ($("#panelsStayOpen-collapseOne").hasClass("show") !== false) {
             oLayer.xfield = $("#x-select").val();
             oLayer.yfield = $("#y-select").val();
             _mapCSV(evt.target.result, oLayer, oLayer.layer, $("#srs-select").val());
@@ -573,7 +573,7 @@ const fileimport = (function () {
             return;
           }
           features.push(result.value);
-          return source.read().then(add);
+          return source.read().then(add);          
         })
       )
       .catch((error) => console.error(error.stack));
@@ -600,7 +600,7 @@ const fileimport = (function () {
       } else {
         formData.append("citycode", oLayer.geocodingcitycode);
       }
-      $("#csv-status").attr("class", "wait");
+      document.getElementById("csv-status").setAttribute("class", "wait");
       $.ajax({
         type: "POST",
         processData: false,
@@ -645,6 +645,7 @@ const fileimport = (function () {
     l.setStyle(getImportStyle.bind(this));
     //Parse geocoded results
     var results = Papa.parse(data, { header: true });
+    
     results.data.forEach(function (a) {
       //create geometries from xfield and y field
       if (a[oLayer.xfield] && a[oLayer.yfield]) {
